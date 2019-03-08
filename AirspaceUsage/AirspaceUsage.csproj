@@ -49,16 +49,56 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\wpftoolkit\ExtendedWPFToolkitSolution\Src\Xceed.Wpf.Toolkit\bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AirspaceMap\MapZoomPan.xaml.cs">
+      <DependentUpon>MapZoomPan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule\Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\EventSettings.xaml.cs">
+      <DependentUpon>EventSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\MapSettings.xaml.cs">
+      <DependentUpon>MapSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\WarningAreaSettings.xaml.cs">
+      <DependentUpon>WarningAreaSettings.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AirspaceMap\AirspaceMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AirspaceMap\MapWarningArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AirspaceMap\MapZoomPan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AirspaceMap\AirspaceMap.xaml.cs">
+      <DependentUpon>AirspaceMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AirspaceMap\MapWarningArea.xaml.cs">
+      <DependentUpon>MapWarningArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AirspaceMap\WarningAreaImporter.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -67,6 +107,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Schedule\Schedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\EventSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\MapSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\WarningAreaSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +146,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="default.areas">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="default.events">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +159,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dsbSoftware\MyLibrary\WPFLibrary\WPFLibrary.csproj">
+      <Project>{11ec5682-364e-4746-a7d4-d5e27a4c08e6}</Project>
+      <Name>WPFLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pan Arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

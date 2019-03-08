@@ -1,12 +1,47 @@
-﻿<Window x:Class="AirspaceUsage.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirspaceUsage"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:WPFLibrary="clr-namespace:WPFLibrary;assembly=dsbwpflib" xmlns:AirspaceMap="clr-namespace:AirspaceUsage.AirspaceMap" xmlns:Schedule="clr-namespace:AirspaceUsage.Schedule" xmlns:Settings="clr-namespace:AirspaceUsage.Settings" x:Class="AirspaceUsage.MainWindow"
+        mc:Ignorable="d" Title="FACSFAC AIrspace Usage" WindowState="Maximized">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+    </Window.Background>
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom">
+            <Border BorderBrush="White" BorderThickness="5"/>
+            <DockPanel x:Name="statusBar" DockPanel.Dock="Bottom" LastChildFill="False" Background="Black" Margin="6">
+                <WPFLibrary:StatusBarLocalUTC Background="Black" Foreground="White" DockPanel.Dock="Right"/>
+            </DockPanel>
+        </Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border x:Name="mapBorder" BorderBrush="White" BorderThickness="5,0,5,0"/>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6">
+                    <Button Style="{StaticResource LabelButton}" 
+                            x:Name="airspaceOwner" Content="Airspace Owner: Not Set"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            DockPanel.Dock="Top" Margin="0,5,0,0"
+                            Click="AirspaceOwnerClick"/>
+                    <Grid x:Name="mapArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <AirspaceMap:AirspaceMap/>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+            <Grid>
+                <Border BorderBrush="White" BorderThickness="0,0,5,0"/>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6">
+                    <Button x:Name="settings" Style="{StaticResource LabelButton}" Content="Settings"
+                            HorizontalAlignment="Right" Margin="0,5,20,0" DockPanel.Dock="Top"
+                            Click="SettingsClick"/>
+                    <Grid x:Name="controlArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Schedule:Schedule x:Name="scheduleControl"/>
+                        <Settings:Settings x:Name="settingsControl" Visibility="Collapsed"/>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
 </Window>

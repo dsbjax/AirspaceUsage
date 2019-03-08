@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="AirspaceUsage.AirspaceMap.MapZoomPan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirspaceUsage.AirspaceMap"
+             mc:Ignorable="d" Opacity=".12" 
+             MouseEnter="MouseEnterControl" MouseLeave="MouseLeaveControl">
+    <Grid>
+        <Ellipse Fill="Gray"/>
+        <UniformGrid Rows="3" Columns="3">
+            <Grid/>
+            <Grid>
+                <Ellipse Height="25" Width="25" Fill="LightGray" Margin="3"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Height="15" Width="15" 
+                       Source="/AirspaceUsage;component/Images/Pan Arrow.png" RenderTransformOrigin="0.5,0.5"
+                       MouseDown="UpMouseDown" ToolTip="Pan North">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
+            <Grid/>
+            <Grid>
+                <Ellipse Height="25" Width="25" Fill="LightGray" Margin="3"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Height="15" Width="15" 
+                       Source="/AirspaceUsage;component/Images/Pan Arrow.png" RenderTransformOrigin="0.5,0.5"
+                       MouseDown="LeftMouseDown" ToolTip="Pan West">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+            </Grid>
+            <Grid>
+                <Ellipse Height="28" Width="28" Fill="LightGray" Margin="3"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Content="+" Width="15" FontSize="8" 
+                           VerticalAlignment="Center" HorizontalAlignment="Right" 
+                           ToolTip="Zoom In" MouseDown="ZoomInClick"/>
+                    <Label Content="-" Width="15" Margin="0" FontSize="8" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           ToolTip="Zoom Out" MouseDown="ZoomOutClicked"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Ellipse Height="25" Width="25" Fill="LightGray" Margin="3"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Height="15" Width="15" 
+                       Source="/AirspaceUsage;component/Images/Pan Arrow.png" RenderTransformOrigin="0.5,0.5"
+                       MouseDown="RightMouseDown" ToolTip="Pan East">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+            </Grid>
+            <Grid/>
+            <Grid>
+                <Ellipse Height="25" Width="25" Fill="LightGray" Margin="3"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Height="15" Width="15" 
+                       Source="/AirspaceUsage;component/Images/Pan Arrow.png" RenderTransformOrigin="0.5,0.5"
+                       MouseDown="DownMouseDown" ToolTip="Pan South">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+            </Grid>
+            <Grid/>
+        </UniformGrid>
+    </Grid>
+</UserControl>

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirspaceUsage", "AirspaceUsage\AirspaceUsage.csproj", "{556D9947-82E1-4627-B453-22A56F154F97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFLibrary", "..\..\dsbSoftware\MyLibrary\WPFLibrary\WPFLibrary.csproj", "{11EC5682-364E-4746-A7D4-D5E27A4C08E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{556D9947-82E1-4627-B453-22A56F154F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556D9947-82E1-4627-B453-22A56F154F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556D9947-82E1-4627-B453-22A56F154F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EC5682-364E-4746-A7D4-D5E27A4C08E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EC5682-364E-4746-A7D4-D5E27A4C08E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EC5682-364E-4746-A7D4-D5E27A4C08E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EC5682-364E-4746-A7D4-D5E27A4C08E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

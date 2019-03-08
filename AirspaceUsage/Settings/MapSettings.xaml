@@ -1,0 +1,43 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:AirspaceUsage.Properties"
+             xmlns:local="clr-namespace:AirspaceUsage.Settings"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="AirspaceUsage.Settings.MapSettings"
+             mc:Ignorable="d" >
+    <UniformGrid Columns="2" HorizontalAlignment="Left">
+        
+        <Label Content="Map North West Lat:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+                            Value="{Binding Source={x:Static p:Settings.Default}, Path=NorthWestLat}"
+                            TextAlignment="Center"/>
+        <Label Content="Map North West Long:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+                            Value="{Binding Source={x:Static p:Settings.Default}, Path=NorthWestLong}"
+                            TextAlignment="Center"/>
+        <Label Content="Map Size (Lat/Long Degrees):" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+                            Value="{Binding Source={x:Static p:Settings.Default}, Path=MapSize}"
+                            TextAlignment="Center"/>
+        <Grid/>
+        <Grid/>
+
+        <Label Content="Map Background Color:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <xctk:ColorPicker SelectedColor="{Binding Source={x:Static p:Settings.Default}, Path=MapBackground.Color}"
+                           Margin="5" VerticalAlignment="Center"/>
+        <Label Content="Map Boundry Color:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <xctk:ColorPicker SelectedColor="{Binding Source={x:Static p:Settings.Default}, Path=MapBoundries.Color}"
+                           Margin="5" VerticalAlignment="Center"/>
+
+        <Grid/>
+        <Grid/>
+        
+        <Label Content="Warning Areas Cordinates Filename:" HorizontalAlignment="Right"/>
+        <Button Style="{StaticResource LabelButton}" 
+                Content="{Binding Source={x:Static p:Settings.Default}, Path=MapAreasFile}"
+                Name="getMapAreasFilename" Click="GetMapAreasFilenameClick"
+                VerticalAlignment="Center"/>
+    </UniformGrid>
+</UserControl>

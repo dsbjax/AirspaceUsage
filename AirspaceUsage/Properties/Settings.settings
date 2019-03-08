@@ -1,7 +1,36 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AirspaceUsage.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\KBR Wyle\Airspace Usage</Value>
+    </Setting>
+    <Setting Name="ErrorLogFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\Airspace Usage.log</Value>
+    </Setting>
+    <Setting Name="MapAreasFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">default.areas</Value>
+    </Setting>
+    <Setting Name="EventsFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">default.events</Value>
+    </Setting>
+    <Setting Name="MapBackground" Type="System.Windows.Media.SolidColorBrush" Scope="User">
+      <Value Profile="(Default)">#FF000000</Value>
+    </Setting>
+    <Setting Name="MapBoarder" Type="System.Windows.Media.SolidColorBrush" Scope="User">
+      <Value Profile="(Default)">#FFFFFFFF</Value>
+    </Setting>
+    <Setting Name="MapBoundries" Type="System.Windows.Media.SolidColorBrush" Scope="User">
+      <Value Profile="(Default)">#FFFFFFFF</Value>
+    </Setting>
+    <Setting Name="NorthWestLat" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="NorthWestLong" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">83</Value>
+    </Setting>
+    <Setting Name="MapSize" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

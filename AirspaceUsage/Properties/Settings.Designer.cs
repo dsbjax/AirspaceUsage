@@ -8,22 +8,129 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirspaceUsage.Properties
-{
-
-
+namespace AirspaceUsage.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\KBR Wyle\\Airspace Usage")]
+        public string AppFolder {
+            get {
+                return ((string)(this["AppFolder"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Airspace Usage.log")]
+        public string ErrorLogFile {
+            get {
+                return ((string)(this["ErrorLogFile"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("default.areas")]
+        public string MapAreasFile {
+            get {
+                return ((string)(this["MapAreasFile"]));
+            }
+            set {
+                this["MapAreasFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("default.events")]
+        public string EventsFile {
+            get {
+                return ((string)(this["EventsFile"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FF000000")]
+        public global::System.Windows.Media.SolidColorBrush MapBackground {
+            get {
+                return ((global::System.Windows.Media.SolidColorBrush)(this["MapBackground"]));
+            }
+            set {
+                this["MapBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFFFFFFF")]
+        public global::System.Windows.Media.SolidColorBrush MapBoarder {
+            get {
+                return ((global::System.Windows.Media.SolidColorBrush)(this["MapBoarder"]));
+            }
+            set {
+                this["MapBoarder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFFFFFFF")]
+        public global::System.Windows.Media.SolidColorBrush MapBoundries {
+            get {
+                return ((global::System.Windows.Media.SolidColorBrush)(this["MapBoundries"]));
+            }
+            set {
+                this["MapBoundries"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36")]
+        public double NorthWestLat {
+            get {
+                return ((double)(this["NorthWestLat"]));
+            }
+            set {
+                this["NorthWestLat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("83")]
+        public double NorthWestLong {
+            get {
+                return ((double)(this["NorthWestLong"]));
+            }
+            set {
+                this["NorthWestLong"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public double MapSize {
+            get {
+                return ((double)(this["MapSize"]));
+            }
+            set {
+                this["MapSize"] = value;
             }
         }
     }
