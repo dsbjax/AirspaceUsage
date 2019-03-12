@@ -1,0 +1,15 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirspaceUsage.Events"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="AirspaceUsage.Events.EventTypes"
+             mc:Ignorable="d">
+    <Grid>
+
+        <ComboBox />
+        <xctk:WatermarkComboBox x:Name="eventsComboBox" Width="300" Watermark="Select an Event:"
+                                SelectionChanged="EventSelectionChanged" />
+    </Grid>
+</UserControl>

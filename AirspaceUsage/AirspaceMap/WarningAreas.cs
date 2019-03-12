@@ -2,17 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace AirspaceUsage.AirspaceMap
 {
-    public class WarningAreaImporter : IEnumerable<WarningArea>
+    public class WarningAreas : IEnumerable<WarningArea>
     {
         private const string AREAHEADER = "AREA: ";
-        private const string GROUPHEADER = "GROUP: ";
         private const string LATLONGHEADER = "LAT/LONG: ";
         private const string REGEXEXP = "(?<NS>[NS])(?<LatDegrees>\\d\\d):(?<LatMins>\\d\\d):(?<LatSecs>\\d\\d).*(?<EW>[WE])(?<LongDegrees>\\d\\d\\d):(?<LongMins>\\d\\d):(?<LongSecs>\\d\\d)";
 
@@ -22,16 +18,10 @@ namespace AirspaceUsage.AirspaceMap
             Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
             "\\" + Properties.Settings.Default.AppFolder + "\\";
 
-#pragma warning disable IDE0044 // Add readonly modifier
-        private string currentGroup = null;
-#pragma warning restore IDE0044 // Add readonly modifier
-
-        public WarningAreaImporter(string filename)
+        public WarningAreas(string filename)
         {
             if(!File.Exists(filename))
-            {
                 filename = appFolder + filename;
-            }
 
             if (File.Exists(filename))
             {
@@ -41,11 +31,9 @@ namespace AirspaceUsage.AirspaceMap
                     while (!readFile.EndOfStream)
                     {
                         line = readFile.ReadLine();
-                        if (line.StartsWith(GROUPHEADER))
-                            currentGroup = line.Replace(GROUPHEADER,"");
-                        else if (line.StartsWith(AREAHEADER))
+                        if (line.StartsWith(AREAHEADER))
                         {
-                            var newWarningArea = new WarningArea(line.Replace(AREAHEADER,""), currentGroup);
+                            var newWarningArea = new WarningArea(line.Replace(AREAHEADER,""));
 
                             while (!readFile.EndOfStream && (line = readFile.ReadLine()).StartsWith(LATLONGHEADER))
                             {
@@ -79,14 +67,12 @@ namespace AirspaceUsage.AirspaceMap
 
     public class WarningArea : IEnumerable<WarningAreaCoordinates>
     {
-        public readonly string GroupName;
         public readonly string WarningAreaName;
         private List<WarningAreaCoordinates> Coordinates = new List<WarningAreaCoordinates>();
 
-        internal WarningArea(string name, string groupName)
+        internal WarningArea(string name)
         {
             WarningAreaName = name;
-            GroupName = groupName;
         }
 
         internal void AddCoordinate(WarningAreaCoordinates coordinates)

@@ -7,20 +7,19 @@
              xmlns:local="clr-namespace:AirspaceUsage.Settings"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="AirspaceUsage.Settings.MapSettings"
              mc:Ignorable="d" >
-    <UniformGrid Columns="2" HorizontalAlignment="Left">
-        
+    <UniformGrid Columns="2" HorizontalAlignment="Center" VerticalAlignment="Top">
         <Label Content="Map North West Lat:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+        <xctk:DoubleUpDown Maximum="90" Minimum="-90" 
                             Value="{Binding Source={x:Static p:Settings.Default}, Path=NorthWestLat}"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" Increment=".25"/>
         <Label Content="Map North West Long:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+        <xctk:DoubleUpDown Maximum="90" Minimum="-90" 
                             Value="{Binding Source={x:Static p:Settings.Default}, Path=NorthWestLong}"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" Increment=".25"/>
         <Label Content="Map Size (Lat/Long Degrees):" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <xctk:IntegerUpDown Maximum="90" Minimum="-90" 
+        <xctk:DoubleUpDown Maximum="25" Minimum="-.5" 
                             Value="{Binding Source={x:Static p:Settings.Default}, Path=MapSize}"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" Increment=".5"/>
         <Grid/>
         <Grid/>
 

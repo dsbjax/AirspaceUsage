@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirspaceUsage.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace AirspaceUsage.Settings
     /// </summary>
     public partial class EventSettings : UserControl
     {
+        EventTypes events = new EventTypes();
         public EventSettings()
         {
             InitializeComponent();
+
+            foreach(var ev in events)
+                eventsListBox.Items.Add(ev);
+        }
+
+        private void SaveChanges(object sender, RoutedEventArgs e)
+        {
+            events.Save();
         }
     }
 }

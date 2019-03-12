@@ -36,10 +36,8 @@
                     <Button x:Name="settings" Style="{StaticResource LabelButton}" Content="Settings"
                             HorizontalAlignment="Right" Margin="0,5,20,0" DockPanel.Dock="Top"
                             Click="SettingsClick"/>
-                    <Grid x:Name="controlArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Schedule:Schedule x:Name="scheduleControl"/>
-                        <Settings:Settings x:Name="settingsControl" Visibility="Collapsed"/>
-                    </Grid>
+                        <Schedule:Schedule x:Name="scheduleControl" Visibility="Collapsed"/>
+                        <Settings:Settings x:Name="settingsControl" Visibility="Visible"/>
                 </DockPanel>
             </Grid>
         </DockPanel>

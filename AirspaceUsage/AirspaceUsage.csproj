@@ -61,6 +61,13 @@
     <Compile Include="AirspaceMap\MapZoomPan.xaml.cs">
       <DependentUpon>MapZoomPan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AirspaceMap\WarningAreaGroup.cs" />
+    <Compile Include="Events\Event.xaml.cs">
+      <DependentUpon>Event.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EventTypes.xaml.cs">
+      <DependentUpon>EventTypes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Schedule\Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>
@@ -88,6 +95,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Events\Event.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EventTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,7 +113,7 @@
     <Compile Include="AirspaceMap\MapWarningArea.xaml.cs">
       <DependentUpon>MapWarningArea.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AirspaceMap\WarningAreaImporter.cs" />
+    <Compile Include="AirspaceMap\WarningAreas.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -171,6 +186,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Pan Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Green Check.png" />
+    <Resource Include="Images\Red X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,30 +5,29 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AirspaceUsage.Settings"
              mc:Ignorable="d" Margin="5">
-    <StackPanel>
-        <DockPanel>
-            <StackPanel Orientation="Horizontal" Margin="5" 
-                        VerticalAlignment="Center" HorizontalAlignment="Left"
-                        DockPanel.Dock="Top">
-                <Label Style="{StaticResource HeaderLabel}" Content="Settings:"/>
-                <Button Style="{StaticResource LabelButton}" Content="Map Settings" 
-                        VerticalAlignment="Center" Margin="5" Width="75" FontWeight="Bold"
-                        Tag="{Binding ElementName=mapSettingsControl}"
-                        Click="SettingsClick" Name="mapSettingsButton"/>
-                <Button Style="{StaticResource LabelButton}" Content="Event Settings" 
-                        VerticalAlignment="Center" Margin="5" Width="80"
-                        Tag="{Binding ElementName=eventSettingsControl}"
-                        Click="SettingsClick" Name="eventSettingsButton"/>
-                <Button Style="{StaticResource LabelButton}" Content="Warning Area Settings" 
-                        VerticalAlignment="Center" Margin="5"
-                        Tag="{Binding ElementName=warningAreaSettingsControl}"
-                        Click="SettingsClick" Name="warningAreaSettingsButton"/>
-            </StackPanel>
-            <Grid>
-                <local:MapSettings x:Name="mapSettingsControl"/>
-                <local:EventSettings x:Name="eventSettingsControl" Visibility="Collapsed"/>
-                <local:WarningAreaSettings x:Name="warningAreaSettingsControl" Visibility="Collapsed"/>
-            </Grid>
-        </DockPanel>
-    </StackPanel>
+    
+    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Stretch">
+        <StackPanel Orientation="Horizontal" Margin="5" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    DockPanel.Dock="Top">
+            <Label Style="{StaticResource HeaderLabel}" Content="Settings:"/>
+            <Button Style="{StaticResource LabelButton}" Content="Map Settings" 
+                    VerticalAlignment="Center" Margin="5" Width="75" FontWeight="Bold"
+                    Tag="{Binding ElementName=mapSettingsControl}"
+                    Click="SettingsClick" Name="mapSettingsButton"/>
+            <Button Style="{StaticResource LabelButton}" Content="Event Settings" 
+                    VerticalAlignment="Center" Margin="5" Width="80"
+                    Tag="{Binding ElementName=eventSettingsControl}"
+                    Click="SettingsClick" Name="eventSettingsButton"/>
+            <Button Style="{StaticResource LabelButton}" Content="Warning Area Settings" 
+                    VerticalAlignment="Center" Margin="5"
+                    Tag="{Binding ElementName=warningAreaSettingsControl}"
+                    Click="SettingsClick" Name="warningAreaSettingsButton"/>
+        </StackPanel>
+        
+        <local:MapSettings x:Name="mapSettingsControl" Visibility="Visible"/>
+        <local:EventSettings x:Name="eventSettingsControl" Visibility="Collapsed"/>
+        <local:WarningAreaSettings x:Name="warningAreaSettingsControl" Visibility="Collapsed"/>
+        
+    </DockPanel>
 </UserControl>

@@ -29,9 +29,11 @@ namespace AirspaceUsage.AirspaceMap
         {
             if (e.ButtonState == MouseButtonState.Pressed && e.ChangedButton == MouseButton.Left)
             {
+                Properties.Settings.Default.RedrawMap = false;
                 Properties.Settings.Default.NorthWestLat -= .25;
                 Properties.Settings.Default.NorthWestLong -= .25;
                 Properties.Settings.Default.MapSize -= .5;
+                Properties.Settings.Default.RedrawMap = true;
             }
         }
 
@@ -44,9 +46,11 @@ namespace AirspaceUsage.AirspaceMap
         {
             if (e.ButtonState == MouseButtonState.Pressed && e.ChangedButton == MouseButton.Left)
             {
+                Properties.Settings.Default.RedrawMap = false;
                 Properties.Settings.Default.NorthWestLat += .25;
                 Properties.Settings.Default.NorthWestLong += .25;
                 Properties.Settings.Default.MapSize += .5;
+                Properties.Settings.Default.RedrawMap = true;
             }
 
         }

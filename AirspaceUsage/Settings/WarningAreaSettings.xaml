@@ -3,8 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
              xmlns:local="clr-namespace:AirspaceUsage.Settings"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
     <DockPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" DockPanel.Dock="Top">
+            <xctk:WatermarkComboBox Name="warningAreasComboBox" 
+                                    Watermark="Warning Areas Groups" Width="300" 
+                                    DropDownClosed="WarningAreasDropDownClosed"
+                                    SelectionChanged="WarningAreasSelectionChanged">
+                <ComboBoxItem Content="Add New Group" Selected="NewGroup"/>
+            </xctk:WatermarkComboBox>
+        </StackPanel>
+        <StackPanel Margin="10" DockPanel.Dock="Top" HorizontalAlignment="Center" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label Content="Group Name:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="groupName" Width="300" Margin="5" TextChanged="GroupTextChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label Content="Group Description:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="groupDescription" Width="300" Margin="5" TextChanged="GroupDescriptionChanged"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Style="{Binding Source={StaticResource LabelButton}}" 
+                Content="Delete Group" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+        <Button Style="{Binding Source={StaticResource LabelButton}}" Margin="10"
+                Content="Save Changes" HorizontalAlignment="Center"
+                DockPanel.Dock="Bottom"/>
+        <UniformGrid Columns="3" IsEnabled="False">
+            <DockPanel Margin="5">
+                <Label Content="Warning Areas:" DockPanel.Dock="Top"/>
+                <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </DockPanel>
+            <StackPanel VerticalAlignment="Center" Margin="5">
+                <Button Style="{Binding Source={StaticResource LabelButton}}" Content="Add to group ->" Margin="0,5,0,5"/>
+                <Button Style="{Binding Source={StaticResource LabelButton}}" Content="&lt;- Remove from group" Margin="0,5,0,5"/>
+                <Button Style="{Binding Source={StaticResource LabelButton}}" Content="Clear group" Margin="0,5,0,5"/>
+            </StackPanel>
+            <DockPanel Margin="5">
+                <Label Content="Group Members:" DockPanel.Dock="Top"/>
+                <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </DockPanel>
+        </UniformGrid>
     </DockPanel>
 </UserControl>

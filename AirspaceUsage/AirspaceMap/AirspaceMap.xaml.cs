@@ -20,17 +20,13 @@ namespace AirspaceUsage.AirspaceMap
 
         private void SettingsChanged(object sender, System.Configuration.SettingChangingEventArgs e)
         {
-            if(e.SettingName == "MapAreasFile" || 
-                e.SettingName == "NorthWestLat" || 
-                e.SettingName == "NorthWestLong" || 
-                e.SettingName == "MapSize")
-
+            if(Properties.Settings.Default.RedrawMap)
                 InvalidateVisual();
         }
 
         internal static IEnumerable<WarningArea> GetWarningAreas()
         {
-            return new WarningAreaImporter(Properties.Settings.Default.MapAreasFile);
+            return new WarningAreas(Properties.Settings.Default.MapAreasFile);
         }
 
         internal static void SetAirspaceAreaEventStatus(string areaName, SolidColorBrush brush)
@@ -45,7 +41,7 @@ namespace AirspaceUsage.AirspaceMap
 
             mapCanvas.Children.Clear();
 
-            foreach (var area in new WarningAreaImporter(Properties.Settings.Default.MapAreasFile))
+            foreach (var area in new WarningAreas(Properties.Settings.Default.MapAreasFile))
             {
                 var newArea = new MapWarningArea(area, ActualHeight);
                 mapCanvas.Children.Add(newArea);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirspaceUsage.AirspaceMap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,49 @@ namespace AirspaceUsage.Settings
     /// </summary>
     public partial class WarningAreaSettings : UserControl
     {
+        private WarningAreaGroup currentGroup;
+        private bool newGroup;
+
         public WarningAreaSettings()
         {
             InitializeComponent();
+        }
+
+        private void NewGroup(object sender, RoutedEventArgs e)
+        {
+            currentGroup = new WarningAreaGroup() { GroupName = "New Group", GroupDescription = "Description" };
+            newGroup = true;
+        }
+
+        private void GroupDescriptionChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void GroupTextChanged(object sender, TextChangedEventArgs e)
+        {
+            currentGroup.GroupName = groupName.Text;
+            warningAreasComboBox.InvalidateVisual();
+        }
+
+        private void WarningAreasDropDownClosed(object sender, EventArgs e)
+        {
+            if(newGroup)
+            {
+                warningAreasComboBox.Items.Add(currentGroup);
+                warningAreasComboBox.SelectedItem = currentGroup;
+                newGroup = false;
+            }
+        }
+
+        private void WarningAreasSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(warningAreasComboBox.SelectedIndex != 0)
+            {
+                currentGroup = (WarningAreaGroup)warningAreasComboBox.SelectedItem;
+                groupName.Text = currentGroup.GroupName;
+                groupDescription.Text = currentGroup.GroupDescription;
+            }
         }
     }
 }
